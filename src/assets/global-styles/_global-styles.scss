@@ -1,0 +1,24 @@
+@import "reset";
+@import "variables";
+@import "function";
+
+body {
+    font-family: 'DM Sans', sans-serif;
+
+    #root {
+        min-height: 100vh;
+        width: 100%;
+        padding-top: 9.625rem;
+        background: $background url("../images/bg-header-mobile.svg");
+        font-size: 1rem;
+        position: relative;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        #root {
+            background-image: url("../images/bg-header-desktop.svg");
+        }
+    }
+}

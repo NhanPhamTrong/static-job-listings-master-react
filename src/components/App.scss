@@ -1,0 +1,251 @@
+@import "../assets/global-styles/global-styles";
+
+main {
+    min-height: 100vh;
+    background: $main-background;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 90%;
+        position: relative;
+        top: -2.25rem;
+        
+        .tag-bar {
+            margin-bottom: 3.5rem;
+            padding: 0.75rem 1.125rem;
+            background: $surface;
+            border-radius: 0.25rem;
+            color: $on-surface;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+
+            .tag-section {
+                width: 100%;
+                
+                ul {
+                    li {
+                        height: 100%;
+                        margin-right: 1rem;
+                        margin-bottom: 1rem;
+                        margin: 0.5rem 1rem 0.5rem 0;
+                        display: inline-flex;
+                        align-items: center;
+                        overflow: hidden;
+
+                        .tag-name {
+                            width: max-content;
+                            padding: 0.375rem;
+                            background: $main-background;
+                            border-radius: 0.25rem 0 0 0.25rem;
+                            color: $primary;
+                        }
+
+                        button {
+                            width: 2rem;
+                            padding: 0.375rem 0;
+                            background: $primary url("../assets/images/icon-remove.svg") no-repeat center;
+                            border-radius: 0 0.25rem 0.25rem 0;
+                            color: rgba(0, 0, 0, 0);
+                            transition: 0.2s;
+                        }
+
+                        button:hover {
+                            background-color: $secondary;
+                        }
+                    }
+                }
+            }
+
+            .clear-btn {
+                padding: 0.375rem 0;
+                color: $on-surface;
+            }
+
+            .clear-btn:hover {
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+
+        ul.main-section {
+            display: grid;
+            grid-row-gap: 2.5rem;
+
+            li {
+                background: $background;
+                border-radius: 0.25rem;
+                position: relative;
+
+                .job-container {
+                    padding: 2rem 1.5rem;
+                    background: $surface;
+                    border-radius: 0.25rem;
+                    color: $on-surface;
+                    position: relative;
+                    left: 0;
+                    transition: 0.2s;
+
+                    .logo {
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 10rem;
+                        overflow: hidden;
+                        position: absolute;
+                        top: -1.5rem;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+
+                    .company-info {
+                        div {
+                            display: flex;
+                            align-items: center;
+
+                            span {
+                                font-size: 1rem;
+                            }
+
+                            span.company-name {
+                                color: $primary;
+                                font-weight: 700;
+                            }
+
+                            span.new, span.featured {
+                                margin-left: 0.25rem;
+                                padding: 0.375rem;
+                                border-radius: 10rem;
+                                color: $on-primary;
+                            }
+
+                            span.new {
+                                background: $primary;
+                            }
+
+                            span.featured {
+                                background: $secondary;
+                            }
+                        }
+    
+                        h1 {
+                            margin: 1rem 0;
+                            color: $secondary;
+                            cursor: pointer;
+                            font-size: 1.25rem;
+                            transition: 0.2s;
+                        }
+
+                        h1:hover {
+                            color: $primary;
+                        }
+
+                        div:nth-child(3) {
+                            span.dot {
+                                height: 0.25rem;
+                                width: 0.25rem;
+                                margin: 0 0.5rem;
+                                background: $on-surface;
+                                border-radius: 10rem;
+                            }
+                        }
+                    }
+
+                    hr {
+                        margin-top: 1rem;
+                    }
+    
+                    .company-tag-list {
+                        button {
+                            margin: 1rem 1rem 0 0;
+                            padding: 0.5rem;
+                            background: $main-background;
+                            border-radius: 0.25rem;
+                            color: $on-main-background;
+                            font-weight: 700;
+                            transition: 0.2s;
+                        }
+
+                        button:hover {
+                            background: $primary;
+                            color: $on-primary;
+                        }
+                    }
+                }
+
+                .job-container:hover {
+                    left: 0.25rem;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: $main-background;
+    display: flex;
+    justify-content: center;
+    
+    .attribution {
+        width: max-content;
+        font-size: 0.75rem;
+
+        a {
+            color: $primary;
+            font-weight: 700;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        .container {
+            .tag-bar {
+                margin-bottom: 2.5rem;
+            }
+
+            ul.main-section {
+                grid-row-gap: 2.5rem;
+
+                li {
+                    .job-container {
+                        display: grid;
+                        align-items: center;
+                        grid-template-columns: 5.5rem 1fr 1fr;
+                        grid-column-gap: 1rem;
+
+                        .logo {
+                            grid-column: 1;
+                            grid-row: 1;
+                            height: 5.5rem;
+                            width: 5.5rem;
+                            position: relative;
+                            top: 0;
+                        }
+
+                        .company-info {
+                            grid-column: 2;
+                            grid-row: 1;
+
+                            h1 {
+                                margin: 0.5rem 0;
+                            }
+                        }
+
+                        hr {
+                            display: none;
+                        }
+
+                        .company-tag-list {
+                            grid-column: 3;
+                            grid-row: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
